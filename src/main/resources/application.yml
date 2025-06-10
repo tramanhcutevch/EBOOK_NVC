@@ -4,9 +4,8 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://ep-square-fog-a4nspwnd-pooler.us-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_3T7oxhfDauUC&sslmode=require
-    username: neondb_owner
-    password: npg_3T7oxhfDauUC
+     url: jdbc:postgresql://ep-square-fog-a4nspwnd-pooler.us-east-1.aws.neon.tech/ebook?sslmode=require
+   
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
