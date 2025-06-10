@@ -1,15 +1,13 @@
-
 server:
   port: ${PORT:8080}
 
 spring:
   datasource:
-     url: jdbc:postgresql://ep-square-fog-a4nspwnd-pooler.us-east-1.aws.neon.tech/ebook?sslmode=require
-
+    url: jdbc:postgresql://ep-square-fog-a4nspwnd-pooler.us-east-1.aws.neon.tech/ebook?sslmode=require
     username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD:} 
-    
+    password: ${SPRING_DATASOURCE_PASSWORD:}
     driver-class-name: org.postgresql.Driver
+
   jpa:
     show-sql: true
     hibernate:
@@ -28,14 +26,13 @@ spring:
     basename: i18n/messages
     encoding: UTF-8
     default-locale: en
+
 api:
   prefix: api/v1
 
 jwt:
-  expiration: 2592000 #30 days = 30 * 24 * 60 * 60
+  expiration: 2592000 # 30 days
   secretKey: TaqlmGv1iEDMRiFp/pHuID1+T84IABfuA0xXh4GhiUI=
-
-
 
 momo:
   partner-code: MOMO
@@ -45,23 +42,17 @@ momo:
   return-url: https://random-id.ngrok.io/api/v1/payments/momo/success
   notify-url: https://random-id.ngrok.io/api/v1/payments/momo/notify
 
-
-logging:
-  level:
-    org.springframework.security: DEBUG
 vnpay:
-    tmnCode: 0D7U0C4Z
-    hashSecret: 8ZF37DFFNM6F4M756V6PA2MW4UO75DM4
-    payUrl: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-    returnUrl: https://710c-171-251-1-165.ngrok-free.app/api/v1/payments/vnpay-return
+  tmnCode: 0D7U0C4Z
+  hashSecret: 8ZF37DFFNM6F4M756V6PA2MW4UO75DM4
+  payUrl: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+  returnUrl: https://710c-171-251-1-165.ngrok-free.app/api/v1/payments/vnpay-return
 
 cloudinary:
   cloud_name: diauyc0ws
   api_key: 118664976699364
   api_secret: G701wrbBkdMtBvFTT6e5xo7lglk
-# VN pay
-#  vnpay.tmnCode=0D7U0C4Z
-#  vnpay.hashSecret=8ZF37DFFNM6F4M756V6PA2MW4UO75DM4
-#  vnpay.payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-#  vnpay.returnUrl=https://e753-113-185-105-221.ngrok-free.app/api/payment/vnpay-return
-#  sandbox.vnpayment.vn
+
+logging:
+  level:
+    org.springframework.security: DEBUG
